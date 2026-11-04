@@ -1,0 +1,35 @@
+{
+  "venvPath": ".",
+  "venv": ".venv",
+  "extraPaths": [
+    "python"
+  ],
+  "executionEnvironments": [
+    {
+      "root": "python",
+      "extraPaths": [
+        "python"
+      ]
+    },
+    {
+      "root": "tests",
+      "extraPaths": [
+        "python"
+      ]
+    },
+    {
+      "root": "scripts",
+      "extraPaths": [
+        "python"
+      ]
+    }
+  ],
+  "include": [
+    "python",
+    "scripts",
+    "tests"
+  ],
+  "exclude": [
+    ".venv"
+  ]
+}

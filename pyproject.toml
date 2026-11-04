@@ -1,0 +1,69 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "latent-harness"
+version = "0.1.0"
+description = "A controlled test bed for latent-token reasoning on DeepSeek-R1-Distill models: real benchmark evals, a LOTUS latent model with Sinkhorn alignment, and the K=0 control."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [
+    { name = "Vishal Verma", email = "vishal.verma@dehurdle.com" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+]
+keywords = [
+    "latent-reasoning",
+    "pause-tokens",
+    "optimal-transport",
+    "sinkhorn",
+    "deepseek-r1",
+    "llm-evaluation",
+    "negative-result",
+]
+dependencies = [
+    "torch>=2.0.0",
+    "numpy>=1.24",
+    "transformers>=5.0",  # latent model: DynamicCache(ddp_cache_data=...), from_pretrained(dtype=...)
+    "datasets>=2.18.0",
+    "safetensors>=0.4",
+]
+
+[project.urls]
+Repository = "https://github.com/vishal-dehurdle/latent-harness"
+Paper = "https://vishalvermalabs.com/papers/empirical-validation-latent-reasoning-sinkhorn/"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+# Real benchmark evaluation (scripts/eval_baseline.py). MLX on Apple Silicon, vLLM on CUDA.
+eval = [
+    "math-verify[antlr4_13_2]>=0.9",
+    "mlx-lm>=0.32; sys_platform == 'darwin' and platform_machine == 'arm64'",
+]
+eval-cuda = [
+    "math-verify[antlr4_13_2]>=0.9",
+    "vllm",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["python/latent_harness"]
+
+[tool.pytest.ini_options]
+pythonpath = ["python"]
+testpaths = ["tests"]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+extraPaths = ["python"]
+include = ["python", "scripts", "tests"]
+exclude = [".venv"]

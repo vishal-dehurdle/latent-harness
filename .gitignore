@@ -1,0 +1,43 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.dylib
+*.dll
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Packaging & distribution
+build/
+dist/
+wheels/
+*.egg-info/
+.eggs/
+
+# Testing & Linters
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+.mypy_cache/
+
+# Model checkpoints & outputs
+checkpoints/
+outputs/
+*.pt
+*.bin
+*.safetensors
+
+# Logs
+*.log
+
+# OS & Editor files
+.DS_Store
+.vscode/
+.idea/
+.claude/
