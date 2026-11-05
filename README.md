@@ -155,7 +155,7 @@ The tests cover:
 ```bibtex
 @misc{verma2026latenttokens,
   author = {Verma, Vishal},
-  title  = {Sinkhorn-Aligned Latent Tokens Add Nothing Over Fine-Tuning: A Controlled Negative Result on DeepSeek-R1-Distill-Qwen-1.5B},
+  title  = {Sinkhorn-Aligned Latent Tokens Add Nothing Over Fine-Tuning: A Controlled Negative Result},
   year   = {2026},
   url    = {https://vishalvermalabs.com/papers/empirical-validation-latent-reasoning-sinkhorn/}
 }
