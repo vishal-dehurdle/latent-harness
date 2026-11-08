@@ -16,7 +16,7 @@ DeepSeek-R1-Distill-Qwen-1.5B on all 1,319 GSM8K test problems, one sample at te
 | Fine-tuned control, $K=0$ | **19.79%** | 17.66–21.99 |
 | $K=4$ latent tokens | 18.42% | 16.38–20.55 |
 | $K=4$, standardised OT targets (`--ot-standardize --ot-epsilon 0.03`) | 19.56% | 17.44–21.68 |
-| Full reasoning (first 448 problems) | 86.16% | 82.81–89.29 |
+| Full reasoning | 86.88% | 85.06–88.63 |
 
 The latents add nothing over the control. $K=4$ minus $K=0$ is −1.36 points (exact McNemar $p = 0.12$); with standardised targets it is −0.23 ($p = 0.86$).
 
