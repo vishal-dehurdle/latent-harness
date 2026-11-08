@@ -39,7 +39,7 @@ rng = np.random.default_rng(0)
 full = sorted(correct["direct"])
 for a, b in (("K0", "direct"), ("K4", "direct"), ("K4std", "direct"), ("K0", "K4"), ("K0", "K4std"), ("K4std", "K4")):
     out["paired"][f"{a}-{b}"] = paired(np.array([correct[a][i] for i in full]), np.array([correct[b][i] for i in full]), rng)
-# The think run is partial: compare every condition on exactly the problems it has finished.
+# Compare every condition on exactly the problems the think run has finished (all 1,319 once complete).
 sub = sorted(correct["think"])
 out["think_subset"] = {name: round(100 * float(np.mean([correct[name][i] for i in sub])), 2) for name in correct}
 out["think_subset"]["n"] = len(sub)
